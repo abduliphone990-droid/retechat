@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Чат</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="chat-container">
+            <!-- Шапка чата -->
+            <div class="chat-header">
+                <div class="header-left">
+                    <button onclick="window.location.href='index.html'" class="btn-icon">
+                        <i class="fas fa-home"></i>
+                    </button>
+                    <div class="user-info">
+                        <i class="fas fa-user-circle"></i>
+                        <span id="current-user"></span>
+                    </div>
+                </div>
+                <div class="header-right">
+                    <button onclick="shareChat()" class="btn-icon" title="Поделиться чатом">
+                        <i class="fas fa-share-alt"></i>
+                    </button>
+                    <button onclick="logout()" class="btn-icon" title="Выйти">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Область сообщений -->
+            <div class="chat-messages" id="chat-messages">
+                <div class="welcome-message">
+                    <p>Добро пожаловать в чат! Отправьте сообщение, чтобы начать общение.</p>
+                    <p>Вы можете отправить ссылку другу, чтобы общаться вместе.</p>
+                </div>
+            </div>
+            
+            <!-- Панель ввода сообщения -->
+            <div class="message-input">
+                <input type="text" id="message-input" placeholder="Введите сообщение..." maxlength="500">
+                <button onclick="sendMessage()" id="send-button" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+            
+            <!-- Информация о чате -->
+            <div class="chat-info">
+                <p><i class="fas fa-info-circle"></i> Сообщения сохраняются локально в вашем браузере</p>
+            </div>
+        </div>
+    </div>
+    
+    <script src="auth.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
